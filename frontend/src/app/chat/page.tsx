@@ -1,5 +1,8 @@
 import {
+  ClipboardPlus,
   Cross,
+  File,
+  FileText,
   Paperclip,
   SendHorizontal,
   Settings,
@@ -10,6 +13,7 @@ import React from "react";
 import { HandWaving } from "@phosphor-icons/react/dist/ssr";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import QuickAction from "@/components/chat/QuickAction";
 
 const page = () => {
   return (
@@ -53,7 +57,28 @@ const page = () => {
             </p>
           </div>
         </section>
-        <section id="chat-container" className="">
+        <section id="chat-container" className="flex flex-col gap-20">
+          <div
+            id="quick-actions-container"
+            className="flex flex-row gap-3 w-full items-center justify-center"
+          >
+            {" "}
+            <QuickAction
+              title="Make me a CERAE"
+              description="Automatically generate your Clinical Experience, Reflection, and Evaluation Assignment."
+              icon={<FileText className="size-6 text-white" />}
+            />
+            <QuickAction
+              title="Weekly Evaluation"
+              description="Let CERAE-I help you reflect — auto generate your weekly evaluation for yourself, your CI, staff, and patients."
+              icon={<ClipboardPlus className="size-6 text-white" />}
+            />
+            <QuickAction
+              title="Summarize My Duty"
+              description="Get a quick reflection-style summary of what happened during your clinical rotation."
+              icon={<File className="size-6 text-white" />}
+            />
+          </div>
           <div
             id="input-container"
             className="w-[700px] flex flex-row gap-3 items-center justify-center"
